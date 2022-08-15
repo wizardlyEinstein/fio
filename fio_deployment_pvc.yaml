@@ -40,7 +40,7 @@ apiVersion: v1
 metadata:
   name: fio-claim
 spec:
-  storageClassName: pure-file
+  storageClassName: my-cluster-com 
   accessModes:
   - ReadWriteMany
   resources:
