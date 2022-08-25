@@ -32,17 +32,6 @@ spec:
         configMap:
           name: fio-job-config
       - name: fio-data
-        persistentVolumeClaim:
-          claimName: fio-claim
----
-kind: PersistentVolumeClaim
-apiVersion: v1
-metadata:
-  name: fio-claim
-spec:
-  storageClassName: my-cluster-com 
-  accessModes:
-  - ReadWriteMany
-  resources:
-    requests:
-      storage: 1Ti
+        hostPath:
+          path: /opt/bluedata/mapr/mnt/lab.mapr.cluster.com/test/
+          type: DirectoryOrCreate
